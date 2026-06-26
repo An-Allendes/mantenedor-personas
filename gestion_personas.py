@@ -112,3 +112,4 @@ def obtener_persona_por_id(id_persona):
         if persona['id'] == id_persona:
             return persona
     print("ID no registrado")
+    return None
