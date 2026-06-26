@@ -89,8 +89,9 @@ def precargar_datos():
     personas.append(persona2)
     personas.append(persona3)
 
-def buscar_persona_por_id(id_persona):
-    persona_encontrada = obtener_persona_por_id(id_persona)
+def buscar_persona_por_id():
+    id = int(input('Ingrese el id de la persona que desea buscar: '))
+    persona_encontrada = obtener_persona_por_id(id)
     if persona_encontrada is None:
         print("No se encontró a la persona")
     else:
@@ -108,21 +109,19 @@ def obtener_persona_por_id(id_persona):
             return p
     return None
 
-def buscar_persona_por_edad(edad_persona):
-    persona_encontrada = obtener_persona_por_edad(edad_persona)
-    if persona_encontrada is None:
-        print("No se encontró a la persona")
-    else:
-        print(f"ID: {persona_encontrada["id"]}")
-        print(f"Nombre: {persona_encontrada["nombre"]}")
-        print(f"Estatura: {persona_encontrada["estatura"]}") 
-        print(f"Estado: {persona_encontrada["estado"]}")
-        lista_telefonos = persona_encontrada["telefonos"]
-        for t in lista_telefonos:
-            print(f" >(+56){t}")
-
-def obtener_persona_por_edad(edad_persona):
+def buscar_persona_por_edad():
+    edad = int(input('Ingrese la edad de la persona que desea buscar: '))
     for p in personas:
-        if p['edad'] == edad_persona:
-            return p
-    return None
+        if p['edad'] == edad:
+            print(f"ID: {p["id"]}")
+            print(f"Nombre: {p["nombre"]}")
+            print("------------------------")
+
+def imprimir_menu():
+    print("1) Registrar persona")
+    print("2) Eliminar persona (por ID)")
+    print("3) Editar persona (por ID)")
+    print("4) Buscar persona (por ID)")
+    print("5) Buscar personas por edad")
+    print("6) Imprimir todas las personas")
+    print("7) Salir")
