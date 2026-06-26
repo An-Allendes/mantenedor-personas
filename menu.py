@@ -30,3 +30,8 @@ while continuar:
 
     elif op == 6:
         gestion_personas.imprimir_personas()
+
+    elif op == 7:
+        print("Ha salido de la aplicacion")
+        input("presione enter para continuar")
+        continuar = False
