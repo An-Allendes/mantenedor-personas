@@ -107,3 +107,22 @@ def obtener_persona_por_id(id_persona):
         if p['id'] == id_persona:
             return p
     return None
+
+def buscar_persona_por_edad(edad_persona):
+    persona_encontrada = obtener_persona_por_edad(edad_persona)
+    if persona_encontrada is None:
+        print("No se encontró a la persona")
+    else:
+        print(f"ID: {persona_encontrada["id"]}")
+        print(f"Nombre: {persona_encontrada["nombre"]}")
+        print(f"Estatura: {persona_encontrada["estatura"]}") 
+        print(f"Estado: {persona_encontrada["estado"]}")
+        lista_telefonos = persona_encontrada["telefonos"]
+        for t in lista_telefonos:
+            print(f" >(+56){t}")
+
+def obtener_persona_por_edad(edad_persona):
+    for p in personas:
+        if p['edad'] == edad_persona:
+            return p
+    return None

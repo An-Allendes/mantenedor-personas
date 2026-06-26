@@ -28,6 +28,10 @@ while continuar:
         id = int(input('Ingrese el id de la persona que desea buscar: '))
         gestion_personas.buscar_persona_por_id(id)
 
+    elif op == 5:
+        edad = int(input('Ingrese la edad de la persona que desea buscar: '))
+        gestion_personas.buscar_persona_por_edad(edad)
+
     elif op == 6:
         gestion_personas.imprimir_personas()
 
